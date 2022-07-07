@@ -1,0 +1,53 @@
+<div class="tab-pres" >
+    <table mat-table [dataSource]="dataSource">
+    
+        <ng-container matColumnDef="nom_Famille">
+          <th [ngClass]=" idColor " mat-header-cell *matHeaderCellDef> Famille </th>
+          <td mat-cell *matCellDef="let element"> <a [routerLink]="'/familleCreature/' + element.nom_Famille" ><img [src]="'./assets/famille/'+ element.nom_Famille +'.png'" ></a> </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th [ngClass]=" idColor " mat-header-cell *matHeaderCellDef style="width: 330px;"> Nom </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+    
+        <ng-container matColumnDef="gene_id">
+          <th [ngClass]=" idColor " mat-header-cell *matHeaderCellDef> Gén. </th>
+          <td mat-cell *matCellDef="let element"> {{element.gene_id}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="rare_niveau">
+          <th [ngClass]=" idColor " mat-header-cell *matHeaderCellDef> Rareté </th>
+          <td mat-cell *matCellDef="let element"> {{element.rare_niveau}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"
+                   showFirstLastButtons >
+    </mat-paginator>
+
+
+    <!-- <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Famille</th>
+                <th>Nom</th>
+                <th>Génération</th>
+                <th>Rareté</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of creatures">
+                <td>{{ c.id }}</td>
+                <td><a [routerLink]="'/familleCreature/' + c.nom_Famille" ><img [src]="'./assets/famille/'+ c.nom_Famille +'.png'" ></a></td>
+                <td>{{ c.name }}</td>
+                <td>{{ c.gene_id }}</td>
+                <td>{{ chargeRare(c.rare_niveau) }}</td>
+            </tr>
+        </tbody>
+    </table> -->
+</div>

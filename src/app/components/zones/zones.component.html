@@ -1,0 +1,23 @@
+<div class="tab-pres">
+     
+    <ng-container *ngIf="zones?.length; else nozone">
+      <h4>Choisissez une Zone</h4>
+      <mat-form-field appearance="fill" >
+        <mat-label>Zone à explorer</mat-label>
+        <mat-select [(value)]="selected">
+          <mat-option *ngFor="let z of zones" [value]="z.name">
+            {{ z.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button [routerLink]="'/familleZone/' + selected" [disabled]="!selected">GO {{selected}}</button>
+      <button mat-raised-button [routerLink]="'/regions'" >Retour aux Régions</button>
+    </ng-container>
+
+    <ng-template #nozone>
+      <span>Déso, pas de zones pour cette génération.</span>
+    </ng-template>
+
+
+    
+</div>

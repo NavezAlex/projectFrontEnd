@@ -1,0 +1,12 @@
+<div class="tab-pres">
+    <h4>Choisissez une Région</h4>
+    <mat-form-field appearance="fill" >
+      <mat-label>Région à explorer</mat-label>
+      <mat-select [(value)]="selected">
+        <mat-option *ngFor="let r of regions" [value]="r.name">
+          {{r.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button (click)="saveRegion( selected )" [routerLink]="'/zones/' + selected" [disabled]="!selected">GO {{selected}}</button>
+</div>

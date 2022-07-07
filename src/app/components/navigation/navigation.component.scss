@@ -1,0 +1,100 @@
+.maClasse{
+    background-color: aqua;
+}
+
+// .spacer{
+//   flex: 1 1 auto;
+// }
+
+mat-toolbar{
+  height: 200px;
+}
+
+a {
+    text-decoration:none; 
+    text-align: center;
+}
+
+section{
+  width: 100%;
+  height: 200px;
+}
+
+.logo img{
+    width: 350px;
+    height: 200px;
+    //margin: 25px;
+    //padding: 10px;
+}
+
+section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    width: 490px;
+  }
+  
+  .example-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+  
+  .vanilla{
+    background-color: #06629B;
+    color: yellow;
+}
+
+.bc{
+    background-color: #546E39;
+    color: yellow;
+}
+
+.wotlk{
+    background-color: #388BC8;
+    color: white;
+}
+
+.cata{
+    background-color: #F0AA0B;
+    color: black;
+}
+
+.mop{
+    background-color: #039675;
+    color: yellow;
+}
+
+.wod{
+    background-color: #683B0E;
+    color: #FEFBBD;
+}
+
+.legion{
+    background-color: #35373C;
+    color: #B9CB49;
+}
+
+.bfa{
+    background-color: #03395F;
+    color: #E4DDD1;
+}

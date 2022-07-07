@@ -1,0 +1,35 @@
+<form [formGroup]="registerForm" (ngSubmit)="addBeast()">
+    <div class="form-group">
+        <label for="nom_Famille">Famille</label>
+        <select class="form-select" id="nom_Famille" formControlName="nom_Famille">
+            <option *ngFor="let f of familles" [value]="f.name_famille">{{f.name_famille}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="name">Nom</label>
+        <input class="form-control" id="name" type="text" formControlName="name">
+    </div>
+
+    <div class="form-group">
+        <label for="gene_id">Génération</label>
+        <select class="form-select" id="gene_id" formControlName="gene_id">
+            <option *ngFor="let item of extents" [value]="item.id">{{item.nom}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="rare_niveau">Rareté</label>
+        <select class="form-select" id="rare_niveau" formControlName="rare_niveau">
+            <option value="1">Normal</option>
+            <option value="2">Rare</option>
+            <option value="3">Épic</option>
+            <option value="4">Épic Rare</option>
+        </select>
+    </div>
+
+    <div class="btn-group">
+        <a class="btn btn-warning" routerLink='/admin' >Return</a>
+        <input class="btn btn-success" type="submit" value="Save">
+    </div>
+</form>

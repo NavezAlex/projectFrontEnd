@@ -1,0 +1,29 @@
+<div class="tab-pres">
+    
+<ng-container *ngIf="famillesZone?.length; else nozone">
+    
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Nom</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let f of famillesZone">
+                    
+                    <td><a [routerLink]="'/familleCreature/' + f" ><img [src]="'./assets/famille/'+ f +'.png'" ></a></td>
+                    <td><a [routerLink]="'/familleCreature/' + f" >{{ f }}</a></td>
+    
+                </tr>
+            </tbody>
+        </table>
+</ng-container>
+
+<ng-template #nozone>
+    <span>Déso, pas de Créatures pour cette Zone.</span>
+</ng-template>
+
+    <button mat-raised-button [routerLink]="'/zones/' + rgn" >Retour à {{rgn}}</button>
+    <button mat-raised-button [routerLink]="'/regions'" >Retour aux Régions</button>
+</div>

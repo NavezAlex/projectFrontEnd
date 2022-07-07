@@ -1,0 +1,21 @@
+<section >
+    
+    <mat-toolbar [ngClass]=" isClass ">      
+      <div class="logo">
+        <a [routerLink]= "['/home']"> <img [src]="icons[choixExt].image" > </a>
+      </div>
+
+      <div class="spacer"></div>
+      <ng-container *ngFor="let menuItem of menu" >
+        <a mat-button [routerLink]="[menuItem.url]">{{menuItem.title}}</a>
+      </ng-container>
+
+      <a mat-button [matMenuTriggerFor]="menu1">Génération</a>
+        <mat-menu #menu1="matMenu">
+          <a mat-menu-item *ngFor="let item of extents" (click)="changeExt(item.id-1)"><img [src]="item.image"/></a>
+        </mat-menu>
+      
+      
+    </mat-toolbar>
+    
+</section>

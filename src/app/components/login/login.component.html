@@ -1,0 +1,27 @@
+<div>
+    <div *ngIf="!connectedUser">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>User Name</mat-label>
+            <input matInput placeholder="Enter your name" name="pseudo" [(ngModel)] ="pseudo">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" name="password" [(ngModel)] ="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <button mat-raised-button (click)="login()">Se Connecter</button>
+    </div>
+
+    <div *ngIf="connectedUser">
+        <button mat-raised-button (click)="logout()">Se Déconnecter</button>
+    </div>
+    <div *ngIf="connectedUser">
+        Bienvenue {{connectedUser.login}}, vous êtes connecté 
+    </div>
+
+    <div *ngIf="!connectedUser">
+        Vous êtes déconnecté
+    </div>
+</div>
